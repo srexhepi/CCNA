@@ -1,0 +1,88 @@
+\documentclass[10pt, a4paper]{article}
+
+%Set border of textbox
+\usepackage{geometry}
+	\geometry{
+  		left=2cm,
+  		right=2cm,
+  		top=1cm,
+  		bottom=1cm
+  		}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{multicol}
+
+%Code
+\usepackage{listings}
+	%Define shell as basic font for listing
+	\lstset{language=sh}
+	
+\usepackage{pdflscape}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\huge CCNA most basic configurations
+\end{center}
+\vspace{1cm}
+
+\begin{enumerate}
+
+\item disable lookup \\ 
+\lstinline|router# no ip domain-lookup|
+
+\item set device name  \\ 
+\lstinline|router# hostname R1|
+
+
+\item assign privilege level access password \\ 
+\lstinline|router# enable password class|
+
+\item assing password to the VTY line \\ 
+\lstinline| router# line vty 0 15| \\
+\lstinline| router(config-line)# password cisco|
+
+
+\item create message of the day (MOTD) \\ 
+\lstinline|router# banner motd *This is the message of the day!*|
+
+
+\item configure logging for the console \\
+\lstinline|router# line con 0| \\
+\lstinline|router(config-line)# logging synchronous|
+
+\item encrypt plaintext passwords \\ 
+\lstinline|router# service password-encryption|
+
+\item enable unicast ipv6 routing \\ 
+\lstinline| router# ipv6 unicast-routing|
+
+\item copy running config to start config \\ 
+\lstinline|router# Comming soon|
+\end{enumerate}
+
+\begin{landscape}
+\begin{multicols*}{3}
+	[
+	\section{Summary of show commands in CISCO IOS}	
+	This page summarizes all show commands which were often used in the labs. 
+	It is not ordered by any topic of our CCNA course.
+	]
+\noindent
+\begin{lstlisting}
+show ip route
+show ipv6 route
+show ip interface brief
+show ipv6 interface
+\end{lstlisting}
+	
+\end{multicols*}
+\end{landscape}
+
+\end{document}
